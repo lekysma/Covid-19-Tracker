@@ -13,9 +13,11 @@ import SwiftyJSON
 class ViewController: UIViewController {
     
     @IBOutlet weak var globalDatabutton: UIButton!
+    @IBOutlet weak var countryButton: UIButton!
     
     //MARK: - RELEVANT VARIABLES
     private let segueToRelevantDataIdentifier: String = "toGlobalData"
+    private let segueToCountryVC: String = "toCountrySegue"
     private let covidApiUrl: String = "https://covid19.mathdro.id/api"
     var confirmedCasesInfo: String = ""
     var deathsInfo: String = ""
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
         globalDatabutton.layer.cornerRadius = 10
         globalDatabutton.layer.borderWidth = 2
         globalDatabutton.layer.borderColor = UIColor.systemBlue.cgColor
+        //country data button
+        countryButton.layer.cornerRadius = 10
+        countryButton.layer.borderWidth = 2
+        countryButton.layer.borderColor = UIColor.systemBlue.cgColor
     }
     //MARK: - PASS DATA TO 2nd VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,6 +57,13 @@ class ViewController: UIViewController {
         // on appelle la fonction http ici
         httpCall()
     }
+    
+    //MARK: - Bouton qui gere le segue vers country data
+    @IBAction func buttonToCountryData(_ sender: UIButton) {
+        print("it works")
+        performSegue(withIdentifier: segueToCountryVC, sender: self)
+    }
+    
     
     //MARK: - Networking
     func httpCall() {

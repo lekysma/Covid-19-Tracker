@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BA2E0AE92768336B117DCE05 /* Pods_Covid_19_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AC1549F746F6D26E08303B /* Pods_Covid_19_Tracker.framework */; };
+		FB048DF22469424F00C4B473 /* PaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB048DF12469424F00C4B473 /* PaysTableViewController.swift */; };
+		FB048DF424694C3400C4B473 /* CountryDatamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB048DF324694C3400C4B473 /* CountryDatamodel.swift */; };
 		FB964BE3244B23F60058DFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB964BE2244B23F60058DFBE /* AppDelegate.swift */; };
 		FB964BE5244B23F60058DFBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB964BE4244B23F60058DFBE /* SceneDelegate.swift */; };
 		FB964BE7244B23F60058DFBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB964BE6244B23F60058DFBE /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 		32AC1549F746F6D26E08303B /* Pods_Covid_19_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid_19_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		725F1509B98F066217F875B8 /* Pods-Covid-19 Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19 Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19 Tracker/Pods-Covid-19 Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		C732163EA093A76D0DCDF74C /* Pods-Covid-19 Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19 Tracker.release.xcconfig"; path = "Target Support Files/Pods-Covid-19 Tracker/Pods-Covid-19 Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		FB048DF12469424F00C4B473 /* PaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaysTableViewController.swift; sourceTree = "<group>"; };
+		FB048DF324694C3400C4B473 /* CountryDatamodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDatamodel.swift; sourceTree = "<group>"; };
 		FB964BDF244B23F60058DFBE /* Covid-19 Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19 Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB964BE2244B23F60058DFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB964BE4244B23F60058DFBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +62,34 @@
 				725F1509B98F066217F875B8 /* Pods-Covid-19 Tracker.debug.xcconfig */,
 				C732163EA093A76D0DCDF74C /* Pods-Covid-19 Tracker.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB2EF7CC2469A64A00331BEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB964BED244B23FB0058DFBE /* LaunchScreen.storyboard */,
+				FB964BE8244B23F60058DFBE /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB2EF7CD2469A65C00331BEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB048DF324694C3400C4B473 /* CountryDatamodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB2EF7CE2469A66400331BEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB964BE6244B23F60058DFBE /* ViewController.swift */,
+				FB964BF6244B296B0058DFBE /* GlobalDataViewController.swift */,
+				FB048DF12469424F00C4B473 /* PaysTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FB964BD6244B23F60058DFBE = {
@@ -85,11 +115,10 @@
 			children = (
 				FB964BE2244B23F60058DFBE /* AppDelegate.swift */,
 				FB964BE4244B23F60058DFBE /* SceneDelegate.swift */,
-				FB964BE6244B23F60058DFBE /* ViewController.swift */,
-				FB964BF6244B296B0058DFBE /* GlobalDataViewController.swift */,
-				FB964BE8244B23F60058DFBE /* Main.storyboard */,
+				FB2EF7CE2469A66400331BEC /* Controllers */,
+				FB2EF7CD2469A65C00331BEC /* Model */,
+				FB2EF7CC2469A64A00331BEC /* Views */,
 				FB964BEB244B23FB0058DFBE /* Assets.xcassets */,
-				FB964BED244B23FB0058DFBE /* LaunchScreen.storyboard */,
 				FB964BF0244B23FB0058DFBE /* Info.plist */,
 			);
 			path = "Covid-19 Tracker";
@@ -210,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB048DF22469424F00C4B473 /* PaysTableViewController.swift in Sources */,
 				FB964BE7244B23F60058DFBE /* ViewController.swift in Sources */,
 				FB964BE3244B23F60058DFBE /* AppDelegate.swift in Sources */,
 				FB964BE5244B23F60058DFBE /* SceneDelegate.swift in Sources */,
+				FB048DF424694C3400C4B473 /* CountryDatamodel.swift in Sources */,
 				FB964BF7244B296B0058DFBE /* GlobalDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

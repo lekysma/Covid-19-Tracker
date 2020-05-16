@@ -15,14 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kas-Ny-mJU">
-                                <rect key="frame" x="50" y="428.5" width="314" height="39"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Check Global data"/>
-                                <connections>
-                                    <action selector="boutonToGlobalData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rd-Rp-acI"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3Tn-Sy-qkS" userLabel="buttons Stack View">
+                                <rect key="frame" x="20" y="389" width="374" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kas-Ny-mJU">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Global data"/>
+                                        <connections>
+                                            <action selector="boutonToGlobalData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3rd-Rp-acI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSX-qL-ZRg">
+                                        <rect key="frame" x="0.0" y="79" width="374" height="39"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Data by country"/>
+                                        <connections>
+                                            <action selector="buttonToCountryData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yrf-fC-p6X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COVID-19 TRACKER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBQ-Q9-VOT">
                                 <rect key="frame" x="54" y="278.5" width="306" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
@@ -39,20 +52,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="uL1-t0-YpV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3jl-1c-UMj"/>
-                            <constraint firstItem="kas-Ny-mJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="7zT-qH-6Q6"/>
+                            <constraint firstItem="3Tn-Sy-qkS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Ve-NT-wGw"/>
+                            <constraint firstItem="3Tn-Sy-qkS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Onp-cP-9gC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uL1-t0-YpV" secondAttribute="bottom" constant="8" id="PCr-ST-ov9"/>
-                            <constraint firstItem="kas-Ny-mJU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VRy-IL-Crv"/>
+                            <constraint firstItem="3Tn-Sy-qkS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UkM-91-z8U"/>
                             <constraint firstItem="CBQ-Q9-VOT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ddK-uc-Avr"/>
-                            <constraint firstItem="kas-Ny-mJU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gee-TD-Q1C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kas-Ny-mJU" secondAttribute="trailing" constant="50" id="k4j-Jr-crF"/>
-                            <constraint firstItem="kas-Ny-mJU" firstAttribute="top" secondItem="CBQ-Q9-VOT" secondAttribute="bottom" constant="109" id="nru-aB-BXI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Tn-Sy-qkS" secondAttribute="trailing" constant="20" id="oWI-DJ-Ltn"/>
+                            <constraint firstItem="3Tn-Sy-qkS" firstAttribute="top" secondItem="CBQ-Q9-VOT" secondAttribute="bottom" constant="69.5" id="sFM-2V-D9h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="QRF-TB-0o2"/>
                     <connections>
+                        <outlet property="countryButton" destination="lSX-qL-ZRg" id="e02-V8-pBr"/>
                         <outlet property="globalDatabutton" destination="kas-Ny-mJU" id="Kz6-YB-MaT"/>
                         <segue destination="2yi-3U-cph" kind="show" identifier="toGlobalData" id="xcf-vs-dsk"/>
+                        <segue destination="oRK-IE-Ymd" kind="show" identifier="toCountrySegue" id="kR9-XS-raH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,13 +82,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-9O-haT" userLabel="Global Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IAz-9O-haT" userLabel="Global Stack View">
                                 <rect key="frame" x="20" y="388.5" width="374" height="119.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GRZ-Ro-tSp" userLabel="Deaths Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed cases : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-HA-RVd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed cases : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-HA-RVd">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="26.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
@@ -143,6 +158,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNl-hE-Kfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1773.913043478261" y="103.79464285714285"/>
+        </scene>
+        <!--Country Data-->
+        <scene sceneID="MJd-wy-19C">
+            <objects>
+                <tableViewController id="oRK-IE-Ymd" customClass="PaysTableViewController" customModule="Covid_19_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dli-Xh-dAu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="NzU-X9-fnN" customClass="CountryDataTableViewCell" customModule="Covid_19_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NzU-X9-fnN" id="BeD-As-aGA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P65-pr-dAI">
+                                            <rect key="frame" x="28" y="19" width="57.5" height="33.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-yt-Rzw" userLabel="Data Stack View">
+                                            <rect key="frame" x="28" y="119.5" width="147" height="61.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed Cases: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4g-9t-2eW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyC-zr-PUC">
+                                                    <rect key="frame" x="0.0" y="20.5" width="66.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recoveries: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Sd-nnm">
+                                                    <rect key="frame" x="0.0" y="41" width="97" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="P65-pr-dAI" firstAttribute="top" secondItem="BeD-As-aGA" secondAttribute="topMargin" constant="8" id="lzQ-Cc-TKA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hQ8-yt-Rzw" secondAttribute="bottom" constant="8" id="scf-51-2uQ"/>
+                                        <constraint firstItem="hQ8-yt-Rzw" firstAttribute="leading" secondItem="BeD-As-aGA" secondAttribute="leadingMargin" constant="8" id="w2R-2G-B82"/>
+                                        <constraint firstItem="P65-pr-dAI" firstAttribute="leading" secondItem="BeD-As-aGA" secondAttribute="leadingMargin" constant="8" id="zWA-HX-nlR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CountryNameLabel" destination="P65-pr-dAI" id="yto-e4-vKZ"/>
+                                    <outlet property="confirmedCasesLabel" destination="F4g-9t-2eW" id="5hd-XF-Zte"/>
+                                    <outlet property="deathsLabel" destination="gyC-zr-PUC" id="1O0-hu-LN5"/>
+                                    <outlet property="recoveriesLabel" destination="YiB-Sd-nnm" id="TxS-wR-sTm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oRK-IE-Ymd" id="1fD-3M-mrQ"/>
+                            <outlet property="delegate" destination="oRK-IE-Ymd" id="QX2-pk-R1s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Country Data" id="n2f-Xe-GPy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fev-di-LHs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6gl-sc-Z0B">
